@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<nav class="navbar">
+  <a href="#" class="nav-link active" data-tab="inicio">Inicio</a>
+  <a href="#" class="nav-link" data-tab="proyectos">Proyectos</a>
+  <a href="#" class="nav-link" data-tab="contacto">Contacto</a>
+</nav>
+
+<div id="inicio" class="tab-content">Contenido de Inicio</div>
+<div id="proyectos" class="tab-content" style="display:none;">Contenido de Proyectos</div>
+<div id="contacto" class="tab-content" style="display:none;">Contenido de Contacto</div>
+
+<style>
+.navbar { display: flex; gap: 20px; background: #222; padding: 10px; }
+.nav-link { color: white; text-decoration: none; padding: 8px 12px; }
+.nav-link.active { background: #444; border-radius: 6px; }
+</style>
+
+<script>
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.getElementById(link.dataset.tab).style.display = 'block';
+    link.classList.add('active');
+  });
+});
+</script>
