@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Práctica Git</title>
-    <link rel='stylesheet' href='./css/form.css'>
+
+    <link rel="stylesheet" href="./css/form.css">
 </head>
+
 <body>
 
     <!-- Navbar -->
@@ -15,45 +18,75 @@
         <a href="#" class="nav-link" data-tab="contacto">Contacto</a>
     </nav>
 
-    <div id="inicio" class="tab-content">Contenido de Inicio</div>
-    <div id="proyectos" class="tab-content" style="display:none;">Contenido de Proyectos</div>
-    <div id="contacto" class="tab-content" style="display:none;">Contenido de Contacto</div>
+    <!-- Contenido de las pestañas -->
+    <main class="contenedor">
 
-    <!-- Botón de nombres -->
-    <button id="boton-nombres">Leo</button>
+        <section class="tabs">
 
-    <!-- Formulario absurdo -->
-    <form id="formAbsurdo">
-        <label>¿Por qué la palabra "separado" se escribe todo junto y "todo junto" se escribe separado?: 
-            <input type="text" name="palabra">
-        </label><br>
+            <div id="inicio" class="tab-content active-tab">
+                Contenido de Inicio
+            </div>
 
-        <label>¿Hasta dónde se lavan la cara los calvos?: 
-            <input type="text" name="calvos">
-        </label><br>
+            <div id="proyectos" class="tab-content">
+                Contenido de Proyectos
+            </div>
 
-        <label>¿Por qué no hay comida para gatos con sabor a ratón?: 
-            <input type="text" name="gatos">
-        </label><br>
+            <div id="contacto" class="tab-content">
+                Contenido de Contacto
+            </div>
 
-        <label>Si estás en el baño de un lugar público y te das cuenta de que no hay papel, ¿cuál es tu plan de emergencia real?: 
-            <input type="text" name="baño">
-        </label><br>
+        </section>
 
-        <label>¿Crees en los extraterrestres?
-            <select name="alien">
-                <option value="">-- Selecciona --</option>
-                <option value="Sí">Sí</option>
-                <option value="No">No</option>
-                <option value="Tal vez">Tal vez</option>
-            </select>
-        </label><br>
+        <!-- Botón de nombres -->
+        <button id="boton-nombres">Leo</button>
 
-        <button type="submit">Enviar</button>
-    </form>
+        <!-- Formulario absurdo -->
+        <form id="formAbsurdo">
 
-    <div id="resultado"></div>
+            <h1>Formulario absurdo</h1>
+
+            <label>
+                ¿Por qué la palabra "separado" se escribe todo junto y
+                "todo junto" se escribe separado?
+                <input type="text" name="palabra">
+            </label>
+
+            <label>
+                ¿Hasta dónde se lavan la cara los calvos?
+                <input type="text" name="calvos">
+            </label>
+
+            <label>
+                ¿Por qué no hay comida para gatos con sabor a ratón?
+                <input type="text" name="gatos">
+            </label>
+
+            <label>
+                Si estás en el baño de un lugar público y te das cuenta
+                de que no hay papel, ¿cuál es tu plan de emergencia real?
+                <input type="text" name="baño">
+            </label>
+
+            <label>
+                ¿Crees en los extraterrestres?
+
+                <select name="alien">
+                    <option value="">-- Selecciona --</option>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                    <option value="Tal vez">Tal vez</option>
+                </select>
+            </label>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+        <div id="resultado"></div>
+
+    </main>
 
     <script src="./js/form.js"></script>
+
 </body>
 </html>
