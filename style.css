@@ -1,52 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
+  min-height: 100vh;
+  color: #333;
+  background-color: #f4f1fa;
 }
 
-#dom-seccion {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.controles {
+.navbar {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
+  padding: 12px 20px;
+  background: #222;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.controles input {
-  flex: 1;
-  min-width: 180px;
-  padding: 8px;
-}
-
-.controles button {
-  padding: 8px 12px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
+.nav-link {
+  padding: 10px 18px;
   color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
-.controles button:hover {
-  opacity: 0.85;
+.nav-link:hover,
+.nav-link.active {
+  background: #7c3aed;
 }
 
-#contenedorElementos p {
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 8px;
+.contenedor {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.elemento-modificado {
-  background-color: #ffe066 !important;
+.tabs,
+#formAbsurdo,
+#resultado {
+  width: 100%;
+}
+
+.tab-content {
+  padding: 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tab-content:not(.active-tab) {
+  display: none;
+}
+
+#boton-nombres {
+  display: block;
+  min-width: 200px;
+  margin: 25px auto;
+  padding: 14px 40px;
+  color: white;
+  font-size: 1.3rem;
   font-weight: bold;
+  background: #7c3aed;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#boton-nombres:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+}
+
+#formAbsurdo {
+  padding: 30px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+#formAbsurdo h1 {
+  margin-bottom: 25px;
+  color: #7c3aed;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#formAbsurdo label {
+  display: block;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+#formAbsurdo input,
+#formAbsurdo select {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+#formAbsurdo input:focus,
+#formAbsurdo select:focus {
+  outline: none;
+  border-color: #8e5bf0;
+  box-shadow: 0 0 0 3px rgba(142, 91, 240, 0.12);
+}
+
+#formAbsurdo button[type="submit"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 13px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #8e5bf0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#formAbsurdo button[type="submit"]:hover {
+  background-color: #6e3fd4;
+}
+
+#resultado {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 15px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .nav-link {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+
+  .contenedor {
+    margin-top: 25px;
+    padding: 0 15px;
+  }
+
+  #formAbsurdo {
+    padding: 22px 18px;
+  }
+
+  #formAbsurdo h1 {
+    font-size: 1.5rem;
+  }
+
+  #boton-nombres {
+    width: 100%;
+    min-width: 0;
+  }
 }

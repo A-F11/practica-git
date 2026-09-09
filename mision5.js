@@ -1,41 +1,38 @@
-const contenedor = document.getElementById("contenedorElementos");
-const inputTexto = document.getElementById("inputTexto");
-const btnCrear = document.getElementById("btnCrear");
-const btnModificar = document.getElementById("btnModificar");
+const enlaces = document.querySelectorAll(".nav-link");
+const pestañas = document.querySelectorAll(".tab-content");
+const botonNombres = document.getElementById("boton-nombres");
+const formulario = document.getElementById("formAbsurdo");
+const resultado = document.getElementById("resultado");
 
-function crearElemento() {
-  const texto = inputTexto.value.trim();
+enlaces.forEach((enlace) => {
+  enlace.addEventListener("click", (evento) => {
+    evento.preventDefault();
+    const pestañaSeleccionada = enlace.dataset.tab;
 
-  if (texto === "") {
-    alert("Escribe algo antes de crear el elemento");
+    enlaces.forEach((elemento) => elemento.classList.remove("active"));
+    pestañas.forEach((pestaña) => pestaña.classList.remove("active-tab"));
+    enlace.classList.add("active");
+    document.getElementById(pestañaSeleccionada).classList.add("active-tab");
+    history.replaceState(null, "", `#${pestañaSeleccionada}`);
+  });
+});
+
+botonNombres.addEventListener("click", () => {
+  const nombres = ["Leo", "Ana", "Carlos", "Sofía"];
+  const nombreActual = botonNombres.textContent;
+  const siguienteNombre = nombres[(nombres.indexOf(nombreActual) + 1) % nombres.length];
+  botonNombres.textContent = siguienteNombre;
+});
+
+formulario.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  const datos = new FormData(formulario);
+  const respuestaAlien = datos.get("alien");
+
+  if (!respuestaAlien) {
+    resultado.textContent = "Selecciona una respuesta sobre los extraterrestres.";
     return;
   }
 
-  const nuevoElemento = document.createElement("p");
-  nuevoElemento.textContent = texto;
-  contenedor.appendChild(nuevoElemento);
-
-  inputTexto.value = "";
-}
-
-function modificarUltimoElemento() {
-  const elementos = contenedor.querySelectorAll("p");
-
-  if (elementos.length === 0) {
-    alert("No hay elementos para modificar");
-    return;
-  }
-
-  const ultimoElemento = elementos[elementos.length - 1];
-  ultimoElemento.textContent += " (modificado)";
-  ultimoElemento.classList.add("elemento-modificado");
-}
-
-btnCrear.addEventListener("click", crearElemento);
-btnModificar.addEventListener("click", modificarUltimoElemento);
-
-inputTexto.addEventListener("keydown", function (evento) {
-  if (evento.key === "Enter") {
-    crearElemento();
-  }
+  resultado.textContent = `Formulario enviado. Tu respuesta sobre los extraterrestres: ${respuestaAlien}.`;
 });

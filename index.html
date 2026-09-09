@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manipulación del DOM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Práctica Git</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main id="dom-seccion">
-    <h1>Manipulación del DOM</h1>
+  <nav class="navbar" aria-label="Navegación principal">
+    <a href="#inicio" class="nav-link active" data-tab="inicio">Inicio</a>
+    <a href="#proyectos" class="nav-link" data-tab="proyectos">Proyectos</a>
+    <a href="#contacto" class="nav-link" data-tab="contacto">Contacto</a>
+  </nav>
 
-    <div class="controles">
-      <input type="text" id="inputTexto" placeholder="Escribe algo...">
-      <button id="btnCrear">Crear elemento</button>
-      <button id="btnModificar">Modificar último elemento</button>
-    </div>
+  <main class="contenedor">
+    <section class="tabs" aria-live="polite">
+      <div id="inicio" class="tab-content active-tab">Contenido de Inicio</div>
+      <div id="proyectos" class="tab-content">Contenido de Proyectos</div>
+      <div id="contacto" class="tab-content">Contenido de Contacto</div>
+    </section>
 
-    <div id="contenedorElementos"></div>
+    <button id="boton-nombres" type="button">Leo</button>
+
+    <form id="formAbsurdo">
+      <h1>Formulario absurdo</h1>
+      <label>
+        ¿Por qué la palabra "separado" se escribe todo junto y "todo junto" se escribe separado?
+        <input type="text" name="palabra">
+      </label>
+      <label>
+        ¿Hasta dónde se lavan la cara los calvos?
+        <input type="text" name="calvos">
+      </label>
+      <label>
+        ¿Por qué no hay comida para gatos con sabor a ratón?
+        <input type="text" name="gatos">
+      </label>
+      <label>
+        Si estás en el baño de un lugar público y te das cuenta de que no hay papel, ¿cuál es tu plan de emergencia real?
+        <input type="text" name="baño">
+      </label>
+      <label>
+        ¿Crees en los extraterrestres?
+        <select name="alien">
+          <option value="">-- Selecciona --</option>
+          <option value="Sí">Sí</option>
+          <option value="No">No</option>
+          <option value="Tal vez">Tal vez</option>
+        </select>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="resultado" role="status"></div>
   </main>
 
   <script src="mision5.js"></script>
