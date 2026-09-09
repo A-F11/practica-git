@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background-color: #f4f1fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+#formAbsurdo {
+  background-color: #ffffff;
+  padding: 30px 35px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+}
+
+#formAbsurdo label {
+  display: block;
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#formAbsurdo input[type="text"],
+#formAbsurdo input[type="number"],
+#formAbsurdo select {
+  margin-top: 6px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#formAbsurdo input:focus,
+#formAbsurdo select:focus {
+  outline: none;
+  border-color: #8e5bf0;
+}
+
+#formAbsurdo button {
+  background-color: #8e5bf0;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#formAbsurdo button:hover {
+  background-color: #6e3fd4;
+}
+
+#resultado {
+  max-width: 500px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  gap: 20px;
+  background: #222;
+  padding: 10px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+.nav-link.active {
+  background: #444;
+  border-radius: 6px;
+}
+
+.tab-content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+/* --- Botón de nombres --- */
+#boton-nombres {
+  margin: 20px 0 0 10px;
+  padding: 16px 40px;
+  min-width: 200px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background: #7c3aed;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#boton-nombres:hover {
+  background: #6d28d9;
+}
